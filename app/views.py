@@ -10,4 +10,4 @@ def user_profile(request):
 
 
 def launchpage(request):
-    return render(request, 'base.html')  
+    return render(request, 'mainpage.html')  
