@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import *  # UserProfile görünümünü içe aktar
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("profile/", user_profile, name='profile'),  # Profile sayfası için yol ekle
+    path("launch/", launchpage, name='launch'),  # Launch sayfası için yol
+
 ]
 
 
