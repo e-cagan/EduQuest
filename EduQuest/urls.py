@@ -21,7 +21,7 @@ from app.views import *  # UserProfile görünümünü içe aktar
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("profile/", user_profile, name='profile'),  # Profile sayfası için yol ekle
-    path("launch/", launchpage, name='launch'),  # Launch sayfası için yol
+    path("", launchpage, name='launch'),  # Launch sayfası için yol
 
 ]
 
