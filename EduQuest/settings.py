@@ -155,7 +155,7 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static'),  # Uygulama içinde static klasörünün yolu
+    os.path.join(BASE_DIR, 'templates/static'),  # Uygulama içinde static klasörü   nün yolu
 ]
 
 # Default primary key field type
