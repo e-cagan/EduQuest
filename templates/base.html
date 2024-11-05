@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">  <!-- CSS dosyasının yolu -->
-    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">  <!-- CSS dosyasının yolu -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
     <title>{% block title %}EduQuest{% endblock %}</title>
-    
-    
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>EduQuest</h1>
+            <nav>
+                <!-- Menü linkleri buraya eklenebilir -->
+            </nav>
+        </header>
 
-    <header>
-        
-        <h1>EduQuesft</h1>
-        <h1>EduQuest</h1>
-        <nav>
-          
+        <aside class="sidebar">
+            <!-- Yan menü içeriği buraya gelecek -->
+            <p>Sidebar İçeriği</p>
+        </aside>
 
-        </nav>
-    </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; 2023 EduQuest. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2023 EduQuest. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
