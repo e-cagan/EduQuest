@@ -1,46 +1,88 @@
 /* Temel stiller */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     background-color: #30342e;
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120vh;
-    padding-top: 20px;
+    flex-direction: column; /* Dikey hizalama */
+    align-items: center; /* Ortaya hizalama */
+    height: 100vh; /* Tam yüksekliği ayarla */
 }
 
-/* Container için Grid düzeni */
+/* Ana Container için Flex düzeni */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 20px;
-   
-    width: 80%;
+    display: flex;
+    flex-direction: column; /* Dikey hizalama */
+    width: 90%;
     max-width: 1200px;
+    gap: 20px;
+}
+
+/* İçerik Container'ı */
+.content-container {
+    display: flex; /* Yan yana yerleştirmek için flex kullanıyoruz */
+    gap: 20px;
+    flex: 1; /* Alanı kaplaması için */
 }
 
 /* Header */
 header {
-    
-    grid-column: 1 / -1;
+    position: sticky;
+    top: 10px; /* Yapışkanlık için üstten 10px uzaklık */
     background: #ef4a27;
-    color: #ffffff;
+    color: #111c18;
     padding: 20px;
+    max-height: 40px; /* Yüksekliği 80px olarak ayarladık */
     text-align: center;
     border-radius: 15px;
+    align-items: center; /* Dikey olarak ortalamak için */
+    display: flex; /* Flex düzeni kullandık */
+    z-index: 10; /* Diğer öğelerin üstünde görünmesi için z-index ekleyebilirsiniz */
+    justify-content: center; /* Yatay olarak ortalamak için */
     
+}
+
+header p {
+   
+    width: 20%;
+    text-align: center; /* Metni ortalamak için */
+    margin: 0; /* Varsayılan margin'i sıfırlamak için */
+}
+
+/* Main Container */
+main {
+    display: flex;
+    flex: 4; /* Kalan alanın %80'ini kaplaması için flex oranını 4 olarak ayarlıyoruz */
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #4a4e4d;
+    min-height: 700px; /* Minimum yükseklik ayarı */
 }
 
 /* Sidebar */
 .sidebar {
-    background: #4a4e4d;
-    color: #ffffff;
+    background: #687063;
+    color: #111c18;
     padding: 20px;
     border-radius: 15px;
+    flex: 1; /* Genişliğin %20'sini kaplaması için flex oranını 1 olarak ayarlıyoruz */
 }
 
 /* Post Body */
@@ -49,22 +91,27 @@ header {
     color: #333;
     padding: 20px;
     border-radius: 15px;
-}
-
-
-main{
-    
-    background-color: #ef4a27;
-    border-radius: 15px;
-    height: 600px;
+    flex: 2; /* Daha fazla alan kaplaması için */
 }
 
 /* Footer */
 footer {
-    grid-column: 1 / -1;
     background: #35424a;
     color: #ffffff;
     padding: 15px;
     text-align: center;
     border-radius: 15px;
+}
+
+/* Ekran boyutuna göre düzenleme */
+@media (min-width: 768px) { /* 768 piksel ve üzeri için */
+    .content-container {
+        flex-direction: row; /* Yan yana yerleşim */
+    }
+}
+
+@media (max-width: 768px) { /* Küçük ekranlar için */
+    .content-container {
+        flex-direction: column; /* Alt alta yerleşim */
+    }
 }
