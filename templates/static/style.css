@@ -38,6 +38,8 @@ body {
 .content-container {
     display: flex; /* Yan yana yerleştirmek için flex kullanıyoruz */
     gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     flex: 1; /* Alanı kaplaması için */
 }
 
@@ -68,7 +70,7 @@ header p {
 /* Main Container */
 main {
     display: flex;
-    flex: 4; /* Kalan alanın %80'ini kaplaması için flex oranını 4 olarak ayarlıyoruz */
+    flex: 6; /* Kalan alanın %80'ini kaplaması için flex oranını 4 olarak ayarlıyoruz */
     gap: 20px;
     padding: 20px;
     border-radius: 15px;
@@ -80,9 +82,35 @@ main {
 .sidebar {
     background: #687063;
     color: #111c18;
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
-    flex: 1; /* Genişliğin %20'sini kaplaması için flex oranını 1 olarak ayarlıyoruz */
+    flex: 2; /* Genişliğin %20'sini kaplaması için flex oranını 1 olarak ayarlıyoruz */
+    display: flex; /* Flex düzeni kullandık */
+    flex-direction: column; /* Dikeyde alt alta yerleşim için */
+    align-items: center; /* Yatayda ortalamak için */
+    min-width: 200px;
+}
+
+.sidebar > * {
+    width: 200px; /* Her öğenin genişliğini %80 olarak ayarlıyoruz */
+    margin: 5px 0; /* Öğeler arasında dikey boşluk için */
+    border-radius: 15px;
+}
+
+.sidebar button {
+    background-color: rgba(255, 255, 255, 0.20); /* Beyaz arka plan ve %75 transparanlık */
+    border: none; /* Butonun kenarlığını kaldırmak için */
+    padding: 10px 20px; /* Butonun içindeki boşluğu ayarlamak için */
+    border-radius: 5px; /* Butonun köşelerini yuvarlamak için */
+    color: #111c18; /* Metin rengi */
+    cursor: pointer; /* Üzerine gelindiğinde imleci işaretçi yapar */
+    width: 100%;
+    text-align: left;
+}
+
+/* Buton üzerine gelindiğinde farklı bir stil eklemek isterseniz: */
+.sidebar button:hover {
+    background-color: #ef4a27;; /* %90 transparan olunca daha belirgin hale gelsin */
 }
 
 /* Post Body */
@@ -113,5 +141,6 @@ footer {
 @media (max-width: 768px) { /* Küçük ekranlar için */
     .content-container {
         flex-direction: column; /* Alt alta yerleşim */
+        padding: 0px;
     }
 }
