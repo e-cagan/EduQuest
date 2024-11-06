@@ -11,3 +11,6 @@ def user_profile(request):
 
 def launchpage(request):
     return render(request, 'mainpage.html')  
+
+def editorcontrol(request):
+    return render(request, 'editorcontrol.html' )
