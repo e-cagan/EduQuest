@@ -59,6 +59,10 @@ footer {
     width: 100%;
 }
 
+.spacer {
+    flex-grow: 1; /* Esneyerek boşluk bırakır */
+}
+
 /* Responsive Ayarlar */
 @media (max-width: 768px) { /* Küçük ekranlar için */
     .container {
