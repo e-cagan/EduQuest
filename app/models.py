@@ -18,6 +18,7 @@ class Course(models.Model):
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    url_sorce = models.URLField()
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -36,6 +37,7 @@ class Content(models.Model):
     content_type = models.CharField(max_length=50)  # 'video', 'text', 'quiz', vb.
     title = models.CharField(max_length=200)
     content = models.TextField()  # İçerik metni, video URL'si, vb.
+    video_url_source = models.URLField()
     order = models.IntegerField()
 
     def __str__(self):
