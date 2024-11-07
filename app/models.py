@@ -18,7 +18,7 @@ class Course(models.Model):
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    url_sorce = models.URLField()
+    url_source = models.URLField()
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
