@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app.views import *  # UserProfile görünümünü içe aktar
 
 urlpatterns = [
@@ -23,7 +23,9 @@ urlpatterns = [
     path("profile/", user_profile, name='profile'),  # Profile sayfası için yol ekle
     path("", launchpage, name='launch'),  # Launch sayfası için yol
     path("editorcontrol", editorcontrol, name='editorcontrol'),  # Launch sayfası için yol
-
+    path("register/", register, name='register'),  # Kayıt sayfası için yol ekle
+    path("login/", user_login, name='login'),  # Giriş sayfası için yol ekle
+     path('accounts/', include('allauth.urls')),  # Google login için allauth URL'lerini dahil et
 
 ]
 

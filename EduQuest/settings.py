@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Diğer uygulamalar...
+    'django.contrib.sites',  # Site framework için
+    'allauth',  # allauth uygulaması
+    'allauth.account',  # allauth account uygulaması
+    'allauth.socialaccount',  # Sosyal hesap uygulaması
+    'allauth.socialaccount.providers.google',  # Google sağlayıcısı
+    # 'allauth.account.middleware.AccountMiddleware' is typically added to MIDDLEWARE
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -50,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = "EduQuest.urls"
@@ -162,3 +172,15 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+SOCIAL_AUTH_GOOGLE_CLIENT_ID = '818674566618-nep2f0nt8b0gnai4e7hejkukhfhv9tfb.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_SECRET = 'YOUR_GOOGLE_SECRET'
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1  # Site framework'ü için
+
+LOGIN_REDIRECT_URL = '/'  # Başarıyla giriş yapıldıktan sonra yönlendirilecek URL

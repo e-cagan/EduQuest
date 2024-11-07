@@ -1,0 +1,22 @@
+.formbox{
+    background-color: #4a4e4d ;
+    margin: auto;
+    width: 400px;
+    display: flex;
+    display: flex;
+    flex-direction: column;  /* Elemanları dikeyde sıralamak için */
+    align-items: center;     /* Yatayda ortalamak için */
+}
+
+
+.formbox button{
+    border-radius: 20px;
+    font-size: 20;
+    background-color: #ef4a27;
+    
+    /*font-family: "Space Mono", monospace;*/
+    
+    margin: 4px 10px;
+    border: none;
+    padding: 15px 20px; 
+}

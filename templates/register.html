@@ -1,0 +1,23 @@
+<!-- templates/mainpage.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Ana Sayfa - EduQuest{% endblock %}
+{% load socialaccount %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'formbox.css' %}">
+<div class="formbox">
+<h2>Register</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Google ile kayıt ol butonu -->
+   
+        <button type="button">Google ile Kayıt Ol</button>
+    </a>
+</div>
+{% endblock %}
