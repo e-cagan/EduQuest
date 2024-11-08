@@ -36,3 +36,16 @@ def user_login(request):
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
+
+def user_profile(request):
+    # Kullanıcının bilgilerini almak için request.user kullanabilirsiniz
+    user = request.user
+    return render(request, 'profile.html', {'user': user})
+
+
+from django.contrib.auth import logout
+
+def user_logout(request):
+    logout(request)
+    return redirect('launch')  # Çıkış yapınca yönlendirilecek yer

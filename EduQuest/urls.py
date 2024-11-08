@@ -26,6 +26,8 @@ urlpatterns = [
     path("register/", register, name='register'),  # Kayıt sayfası için yol ekle
     path("login/", user_login, name='login'),  # Giriş sayfası için yol ekle
      path('accounts/', include('allauth.urls')),  # Google login için allauth URL'lerini dahil et
+      path('profile/', user_profile, name='profile'),  # Profil sayfası URL'si
+      path('logout/', user_logout, name='logout'),  # Çıkış işlemi URL'si
 
 ]
 

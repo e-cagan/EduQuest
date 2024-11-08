@@ -21,8 +21,15 @@
         <button>fgnngf</button>
         <input type="search" placeholder="Search...">
         
+        {% if user.is_authenticated %}
+        <!-- Kullanıcı giriş yaptıysa avatar ve bildirim simgesi -->
         <i class="material-icons-outlined">notifications</i>
-        <img src="{% static 'assets/avatar.jpg' %}" alt="Logo" class="avatarlogo">
+        <a href="{% url 'profile' %}" ><img src="{% static 'assets/avatar.jpg' %}" alt="Logo" class="avatarlogo"></a>
+    {% else %}
+        <!-- Kullanıcı giriş yapmadıysa 'Register' ve 'Login' butonları -->
+        <a href="{% url 'register' %}" ><button class="activebutton">Register</button></a>
+        <a href="{% url 'login' %}" ><button class="activebutton">login</button></a>
+    {% endif %}
         <nav>
             <ul>
                
