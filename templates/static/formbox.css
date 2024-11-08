@@ -6,6 +6,59 @@
     display: flex;
     flex-direction: column;  /* Elemanları dikeyde sıralamak için */
     align-items: center;     /* Yatayda ortalamak için */
+    border-radius: 30px;
+    color: #ccc;
+}
+
+
+.formbox h2{
+
+    font-weight: 400;
+    color: #ef4a27;
+}
+.formbox label{
+    color: #d43d1b;
+}
+form {
+    
+    padding: 20px;
+    border-radius: 8px;
+   color: #ccc;
+
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: auto;    
+    background-color: #333;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #ef4a27; /* Odaklanıldığında sınır rengini değiştirir */
+    outline: none;
+    width: auto;
+}
+
+form button {
+    background-color: #ef4a27;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d43d1b;
 }
 
 

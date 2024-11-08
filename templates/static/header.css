@@ -57,7 +57,9 @@ header button:hover {
   
     
     margin-left: 10px; /* Sola hafif boşluk bırakmak için */
+    transform: rotate(5deg);
 }
+
 
 header {
     width: 100%;
@@ -83,10 +85,11 @@ header span{
 
 
 header /* Material Symbol Outlined Icon */
-.material-icons {
-    font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
-    margin-left: 100px; /* İkonun başa hizalanması için */
-    margin-right: 20px;
+.material-icons-outlined {
+    font-variation-settings: 'FILL' 50, 'wght' 600, 'GRAD' 0, 'opsz' 30;
+    margin-left: 30px; /* İkonun başa hizalanması için */
+    margin-right: 30px;
+    font-size: 25px;
    
 }
 
