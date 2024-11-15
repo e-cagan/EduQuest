@@ -1,5 +1,5 @@
 .sidebar {
-    background: #40444b;
+    background: #4b525d;
     color: #111c18;
     padding: 10px;
     border-radius: 15px;
@@ -19,31 +19,31 @@
    
 }
 
-.sidebar button {
+.sidebar .button1 {
     background-color: rgba(255, 255, 255, 0.20);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    color: #111c18;
+    color: #ffffff;
     cursor: pointer;
     width: 100%;
     text-align: left;
 }
 
-.sidebar button:hover {
+.sidebar .button1:hover {
     background-color: #ef4a27;
 }
 
 /* Main Content */
 main {
-    background: #4a4e4d;
+   
     color: #fff;
     padding: 20px;
     border-radius: 15px;
     flex: 3;
     min-height: 700px;
     --color: #b9bcc5;
-    background-color: #dbd7d3;
+    background-color: #f8ecc5;
   background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
       linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
   background-size: 55px 55px;

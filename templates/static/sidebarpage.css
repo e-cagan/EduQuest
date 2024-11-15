@@ -1,5 +1,5 @@
 .sidebar {
-    background: #40444b;
+    background: #06317c;
     color: #111c18;
     padding: 10px;
     border-radius: 15px;
@@ -19,18 +19,20 @@
    
 }
 
-.sidebar button {
+.sidebar .button1 {
     background-color: rgba(255, 255, 255, 0.20);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    color: #111c18;
+    color: #ffffff;
     cursor: pointer;
     width: 100%;
     text-align: left;
 }
 
-.sidebar button:hover {
+
+
+.sidebar .button1:hover {
     background-color: #ef4a27;
 }
 

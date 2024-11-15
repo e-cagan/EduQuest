@@ -9,7 +9,7 @@
 
 header{
     width: 100%;
-    background-color: #ef4a27;
+    background-color: #ea7a54;
     margin-top: 1%;
     margin-bottom: 3%;
     border-radius: 15px;
@@ -33,12 +33,13 @@ header button{
 }
 
 header button:hover {
-    background-color: rgba(255, 255, 255, 0.6); /* %80 saydam beyaz */
+    
+    background-color: #f8d34b; /* %80 saydam beyaz */
 }
 
 .activebutton{
-    background: rgba(255, 255, 255, 0.5);
-    
+ 
+    background-color: #f8d34b; /* %80 saydam beyaz */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -104,7 +105,7 @@ header input[type="search"] {
     padding: 10px 15px;
     border: none;
     outline: none;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: #f6ecc9;
     font-size: 14px;
     margin-right: auto;
     margin-left: 20px;
@@ -113,6 +114,12 @@ header input[type="search"] {
 header input[type="search"]::placeholder {
     color: #555;
     font-weight: 400;
+}
+
+
+header button .iconbuttonheader{
+    padding: 0  ;
+    background-color: red;
 }
 
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'sidebarpage.css' %}">
     <title>{% block title %}EduQuest{% endblock %}</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -14,8 +15,8 @@
 </head>
 <body>
     <header>
-        <img src="{% static 'assets/logo.png' %}" alt="Logo" class="logo">
-        <button>fgnngfdfvddsf</button>
+        <a href="{% url 'launch' %}" ><img src="{% static 'assets/logo.png' %}" alt="Logo" class="logo"></a>
+        
         <div class="spacer"></div> <!-- Boşluk bırakmak için spacer div -->
         <button class="activebutton">fgnngf</button>
         <button>fgnngf</button>
@@ -23,7 +24,7 @@
         
         {% if user.is_authenticated %}
         <!-- Kullanıcı giriş yaptıysa avatar ve bildirim simgesi -->
-        <i class="material-icons-outlined">notifications</i>
+        <button class="iconbuttonheader"><i class="material-icons-outlined">notifications</i></button>
         <a href="{% url 'profile' %}" ><img src="{% static 'assets/avatar.jpg' %}" alt="Logo" class="avatarlogo"></a>
     {% else %}
         <!-- Kullanıcı giriş yapmadıysa 'Register' ve 'Login' butonları -->
