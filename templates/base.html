@@ -24,7 +24,7 @@
         
         {% if user.is_authenticated %}
         <!-- Kullanıcı giriş yaptıysa avatar ve bildirim simgesi -->
-        <button class="iconbuttonheader"><i class="material-icons-outlined">notifications</i></button>
+        <button class="iconbutton1"><i class="material-icons-outlined">notifications</i></button>
         <a href="{% url 'profile' %}" ><img src="{% static 'assets/avatar.jpg' %}" alt="Logo" class="avatarlogo"></a>
     {% else %}
         <!-- Kullanıcı giriş yapmadıysa 'Register' ve 'Login' butonları -->
