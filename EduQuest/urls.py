@@ -15,16 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from app.views import *  # UserProfile görünümünü içe aktar
+from django.urls import path, include
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+from app.views import home
 
 urlpatterns = [
+    path("", home, name="home"),
     path("admin/", admin.site.urls),
-    path("profile/", user_profile, name='profile'),  # Profile sayfası için yol ekle
-    path("", launchpage, name='launch'),  # Launch sayfası için yol
-    path("editorcontrol", editorcontrol, name='editorcontrol'),  # Launch sayfası için yol
-
-
+    path('app/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('app/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('app/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ]
-
-

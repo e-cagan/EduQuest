@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from django.contrib.messages import constants as messages
-
+from datetime import timedelta
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,6 +34,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "app",
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,7 +45,25 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# JWT authentication configuration
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',  # Tüm API'lere erişim için doğrulama gerektir
+    ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Erişim token süresi
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # Yenileme token süresi
+    'ROTATE_REFRESH_TOKENS': True,  # Refresh token yenileme sırasında değişsin
+    'BLACKLIST_AFTER_ROTATION': True,  # Eski refresh token geçersiz olsun
+}
+
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -123,10 +144,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'app/static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -162,3 +179,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Cors settings configuration
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWS_CREDENTIALS = True

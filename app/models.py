@@ -7,6 +7,7 @@ class User(AbstractUser):
         ('instructor', 'Instructor'),
     ]
     
+    profile_image = models.ImageField(upload_to='static/app/img/', default='static/app/img/default_profile.jpg')
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
 
     def __str__(self):
@@ -18,7 +19,7 @@ class Course(models.Model):
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    url_sorce = models.URLField()
+    url_source = models.URLField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -37,7 +38,7 @@ class Content(models.Model):
     content_type = models.CharField(max_length=50)  # 'video', 'text', 'quiz', vb.
     title = models.CharField(max_length=200)
     content = models.TextField()  # İçerik metni, video URL'si, vb.
-    video_url_source = models.URLField()
+    video_url_source = models.URLField(null=True, blank=True)
     order = models.IntegerField()
 
     def __str__(self):
