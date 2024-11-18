@@ -142,7 +142,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'app/static'),
+    os.path.join(BASE_DIR, 'app/static/static'),
 ]
 
 MESSAGE_TAGS = {
@@ -168,11 +168,6 @@ TEMPLATES = [
             ],
         },
     },
-]
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static'),  # Uygulama içinde static klasörü   nün yolu
 ]
 
 # Default primary key field type

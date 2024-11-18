@@ -1,0 +1,11 @@
+{% extends 'sidebarpage.html' %}
+{% load static %}
+{% block title %}Profil Sayfası{% endblock %}
+
+{% block profile_content %}
+<h2>Hoş Geldiniz, {{ user.username }}!</h2>
+<a href="{% url 'profile' %}" ><img src="{% static 'assets/avatar.jpg' %}" alt="Logo" class="avatarlogo"></a>
+<p>İsim: {{ user.first_name }} {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<a href="{% url 'logout' %}">Çıkış Yap</a>
+{% endblock %}
