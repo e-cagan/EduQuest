@@ -38,7 +38,9 @@ form button {
     border: 1px solid #ccc;
     font-size: 16px;
     width: auto;    
-    background-color: #333;
+    color: #ccc;
+   background-color: #333;
+   
 }
 
 form input[type="text"]:focus,
@@ -46,11 +48,13 @@ form input[type="email"]:focus,
 form input[type="password"]:focus {
     border-color: #ef4a27; /* Odaklanıldığında sınır rengini değiştirir */
     outline: none;
+    color: #ccc;
+    background-color: #333;
     width: auto;
 }
 
 form button {
-    background-color: #ef4a27;
+    background-color: #f8d34b; /* %80 saydam beyaz */
     color: #333;
     font-weight: bold;
     cursor: pointer;
@@ -65,7 +69,7 @@ form button:hover {
 .formbox button{
     border-radius: 20px;
     font-size: 20;
-    background-color: #ef4a27;
+    background-color: #f8d34b; /* %80 saydam beyaz */
     
     /*font-family: "Space Mono", monospace;*/
     
