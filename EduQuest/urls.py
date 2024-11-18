@@ -20,12 +20,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from app.views import *
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+   
     path('app/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('app/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('app/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('app/', include('app.urls')),
-    path("admin/", admin.site.urls),
+  
     path("profile/", user_profile, name='profile'),  # Profile sayfası için yol ekle
     path("", launchpage, name='launch'),  # Launch sayfası için yol
     path("editorcontrol", editorcontrol, name='editorcontrol'),  # Launch sayfası için yol
