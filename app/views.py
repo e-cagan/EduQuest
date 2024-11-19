@@ -77,6 +77,12 @@ class ReviewListCreateView(generics.ListCreateAPIView):
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated]
 
+
+class ReviewListDeleteView(generics.DestroyAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    permission_classes = [IsAuthenticated]
+
 class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
@@ -106,13 +112,13 @@ class QuestionDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 @login_required
 def user_profile(request):
-    return render(request, 'profile.html')  
+    return render(request, 'app/profile.html')  
 
 def launchpage(request):
-    return render(request, 'mainpage.html')  
+    return render(request, 'app/mainpage.html')  
 
 def editorcontrol(request):
-    return render(request, 'editorcontrol.html' )  
+    return render(request, 'app/editorcontrol.html' )  
 
 def register(request):
     if request.method == 'POST':
@@ -123,7 +129,7 @@ def register(request):
             return redirect('launch')  # Kayıt olduktan sonra yönlendirme
     else:
         form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'app/register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -134,13 +140,13 @@ def user_login(request):
             return redirect('launch')  # Giriş yaptıktan sonra yönlendirme
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'app/login.html', {'form': form})
 
 
 def user_profile(request):
     # Kullanıcının bilgilerini almak için request.user kullanabilirsiniz
     user = request.user
-    return render(request, 'profile.html', {'user': user})
+    return render(request, 'app/profile.html', {'user': user})
 
 
 from django.contrib.auth import logout
